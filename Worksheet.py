@@ -395,7 +395,7 @@ if check_password():
                 s= st.selectbox('Client name:', dg['cliente'])
                 if st.button('Delete Client'):
                     sql= '''delete from dash_cl
-                            where dash_cl.cliente={};'''.format(s)
+                            where dash_cl.cliente='{}';'''.format(s)
                     cursor.execute(sql)
                     conn.commit()
                     with st.spinner('Wait for it...'):
